@@ -36,6 +36,9 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v2
 
+      - name: Make gradlew executable
+        run: cd android && chmod +x gradlew
+
       - name: Build APK for Debug
         run: cd android && ./gradlew assembleDebug
 
