@@ -36,14 +36,19 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v2
 
-      - name: Make gradlew executable
-        run: cd android && chmod +x gradlew
+      - name: Fix gradlew permissions and line endings
+        run: |
+          cd android
+          chmod +x gradlew
+          sed -i 's/\r$//' gradlew
 
       - name: Build APK for Debug
-        run: cd android && ./gradlew assembleDebug
+        run: |
+          cd android
+          ./gradlew assembleDebug --stacktrace
 
       - name: Upload APK
         uses: actions/upload-artifact@v3
         with:
-          name: app-debug
+          name: MinhasFinancas-APK
           path: android/app/build/outputs/apk/debug/app-debug.apk
