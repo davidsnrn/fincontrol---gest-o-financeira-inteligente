@@ -1,0 +1,8 @@
+{
+  "name": "FinControl - Gestão Financeira Inteligente",
+  "description": "Um aplicativo de controle financeiro pessoal moderno com biometria simulada, gráficos dinâmicos e insights inteligentes.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
